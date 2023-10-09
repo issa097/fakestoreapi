@@ -18,7 +18,8 @@ p {
   width: 100%;
   font-weight: bold;
 }
-div {
+
+#main > div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,6 +37,10 @@ button {
   padding: 15px;
   border-radius: 20px;
   width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 h5 {
   display: flex;
@@ -58,6 +63,8 @@ h5 {
   flex-direction: row;
   width: 100%;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #PostForm {
@@ -73,4 +80,6 @@ h5 {
   width: 100%;
   display: flex;
   background-color: red;
+  justify-content: center;
+  align-items: center;
 }
