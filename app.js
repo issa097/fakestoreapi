@@ -106,22 +106,26 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((error) => console.error("Error:", error));
     }
 
-    const updatedData = {
-      title: updatedTitle, // Replace with the actual updated title
-      body: updatedBody, // Replace with the actual updated body
-    };
-
-    if (e.target.classList.contains("edit-button")) {
-      const postId = e.target.getAttribute("data-id");
-      fetch(`http://localhost:5000/posts/${postId}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedData),
-      })
-        .then(() => fetchPosts())
-        .catch((error) => console.error("Error:", error));
-    }
+   
   });
+postList.addEventListener("click", function (e) {
+  let titles = prompt("update your title");
+  let bodys = prompt("update your body");
+  if (e.target.classList.contains("edit-button")) {
+    const postId = e.target.getAttribute("data-id");
+    fetch(`http://localhost:5000/posts/${postId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title: titles, body: bodys }),
+    })
+      .then(() => fetchPosts())
+      .catch((error) => console.error("Error:", error));
+  }
 });
+
+  
+});
+
+
