@@ -104,11 +104,8 @@ document.addEventListener("DOMContentLoaded", function () {
       })
         .then(() => fetchPosts())
         .catch((error) => console.error("Error:", error));
-    }
-
-   
-  });
-postList.addEventListener("click", function (e) {
+    }else{
+      
   let titles = prompt("update your title");
   let bodys = prompt("update your body");
   if (e.target.classList.contains("edit-button")) {
@@ -123,7 +120,13 @@ postList.addEventListener("click", function (e) {
       .then(() => fetchPosts())
       .catch((error) => console.error("Error:", error));
   }
-});
+
+      
+    }
+
+   
+  });
+
 
   
 });
